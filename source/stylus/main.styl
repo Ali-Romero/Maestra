@@ -1,0 +1,22 @@
+@import 'common/variables'
+@import 'common/*'
+@import 'components/*'
+
+
+@font-face
+  font-family: "Futura"
+  src: url('/fonts/futurabookc.woff'), url('/fonts/futurabookc.woff2')
+  font-display: swap
+
+@font-face
+  font-family: "Proxima"
+  src: url('/fonts/Proxima Nova.woff'), url('/fonts/Proxima Nova.woff2')
+  font-display: swap
+
+.page
+  display: flex
+  flex-direction: column
+  min-height: 100%
+
+  &__content
+    flex: 1

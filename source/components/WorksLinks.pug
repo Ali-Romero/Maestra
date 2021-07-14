@@ -1,0 +1,34 @@
+-
+  var links = [
+    {
+      href: '#',
+      img: '/images/test-img/1.png',
+      subtitle: 'Интерьеры, придуманные вручную',
+    },
+    {
+      href: '#',
+      img: '/images/test-img/3.png',
+      subtitle: 'Дизайн для несогласных',
+    },
+    {
+      href: '#',
+      img: '/images/test-img/2.png',
+      subtitle: 'Провокационные идеи и несочетаемые материалы',
+    },
+    {
+      href: '#',
+      img: '/images/test-img/4.png',
+      subtitle: 'Восхищает всех, доступен единицам',
+    },
+  ]
+.masonry
+  ul.masonry__list
+    - for (var i = 0; i < links.length; i++)
+      li.masonry__item
+        a(href=links[i].href aria-label="icon").masonry__link
+          .masonry__img
+            img(src=links[i].img alt=links[i].subtitle width="434" height="578").img-masonry
+          .masonry__subtitle
+            .masonry__subtitle-text= links[i].subtitle
+          .masonry__btn
+            .button.button--shadow Подробнее
