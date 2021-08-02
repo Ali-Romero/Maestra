@@ -24,6 +24,7 @@
   &__slide
     color: $color-white
     position: relative
+    vertical-align: top
 
     &::before
       content: ""
@@ -96,6 +97,8 @@
     z-index 2
     
   &__title
+    border-bottom-right-radius: 10px
+    border-bottom-left-radius: 10px
     padding: 20px 30px
     font-size: 18px
     line-height: 20px
@@ -109,8 +112,14 @@
       line-height: 45px
 
   &__projects-slider
-    .slick-arrow.slick-prev
-      //
-    
     .slick-arrow.slick-next
-      //
+      top: 0
+      bottom: 0
+      right: 85px
+      margin: auto
+
+    .slick-arrow.slick-prev
+      top: 0
+      bottom: 0
+      left: 85px
+      margin: auto
