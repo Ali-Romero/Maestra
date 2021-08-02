@@ -1,1 +1,99 @@
-//- h1.slider SLIDER
+-
+  var items = [
+    {
+      img: '/images/test-img/slider/1.png',
+      title: 'Артобъекты, в которых нам пришлось себя сдерживать 111',
+      projectName: 'Красивое название проекта',
+      name: 'Евгения Болотова, 2019 г.',
+      projects: [
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        }
+      ]
+    },
+    {
+      img: '/images/test-img/slider/1.png',
+      title: 'Артобъекты, в которых нам пришлось себя сдерживать 2222',
+      projectName: 'Красивое название проекта',
+      name: 'Евгения Болотова, 2019 г.',
+      projects: [
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        }
+      ]
+    },
+    {
+      img: '/images/test-img/slider/1.png',
+      title: 'Артобъекты, в которых нам пришлось себя сдерживать 333',
+      projectName: 'Красивое название проекта',
+      name: 'Евгения Болотова, 2019 г.',
+      projects: [
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        }
+      ]
+    },
+    {
+      img: '/images/test-img/slider/1.png',
+      title: 'Артобъекты, в которых нам пришлось себя сдерживать 444',
+      projectName: 'Красивое название проекта',
+      name: 'Евгения Болотова, 2019 г.',
+      projects: [
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        },
+        {
+          img: '/images/test-img/slider/2.png',
+        }
+      ]
+    },
+  ]
+
+section.portfolio-slider
+  .wrapper.wrapper--xl
+    .portfolio-slider__slides.js-portfolio-slider
+      each item, index in items
+        .portfolio-slider__slide
+          img(src=item.img, alt=item.title width="1280" height="670").portfolio-slider__img
+          .portfolio-slider__relative
+          .portfolio-slider__inner
+            h2.portfolio-slider__title=item.title
+            .portfolio-slider-card
+              .portfolio-slider-card__title=item.projectName
+              .portfolio-slider-card__name=item.name
+              .portfolio-slider-card__button
+                button.button(data-remodal-target=`modal-${index}`) Смотреть проект
+
+          .remodal.js-projects-modal.portfolio-slider-projects(
+            data-remodal-id=`modal-${index}`
+            data-remodal-options="hashTracking:false, modifier: modal-fullscreen, closeOnEscape:false"
+          )
+            .portfolio-slider-projects__top
+              .portfolio-slider-projects__title=item.title
+              .portfolio-slider-projects__close(data-remodal-action="close")
+                +icon(name="close").portfolio-slider-projects__close-icon
+            .js-projects-slider.portfolio-slider-projects__projects-slider
+              each project in item.projects
+                .portfolio-slider-projects__projects-item
+                  img(src=project.img alt="img" width="1280" height="670").portfolio-slider__img
