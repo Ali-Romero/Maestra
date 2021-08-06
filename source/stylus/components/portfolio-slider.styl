@@ -1,24 +1,40 @@
 .portfolio-slider-card
   display: inline-block
   background: rgba($color-dark-brown, 0.6)
-  padding: 40px 106px 0px 121px
+  padding: 40px 71px 0px 30px
   border-top-right-radius: 10px
   border-bottom-right-radius: 10px
 
-  &__title
-    margin-bottom: 20px
-    font-size: 30px
-    line-height: 34px
+  +above($breakpoints.xl)
+    padding: 40px 106px 0px 121px
 
-  &__name
-    margin-bottom: 40px
+  &__title
+    margin-bottom: 10px
     font-size: 18px
     line-height: 20px
+
+    +above($breakpoints.xl)
+      margin-bottom: 20px
+      font-size: 30px
+      line-height: 34px
+
+  &__name
+    margin-bottom: 30px
+    font-size: 12px
+    line-height: 14px
+
+    +above($breakpoints.xl)
+      margin-bottom: 40px
+      font-size: 18px
+      line-height: 20px
  
   &__button
     margin-bottom: 40px
-    width: 200px
+    width: 160px
     display: inline-block
+
+    +above($breakpoints.xl)
+      width: 200px
 
 .portfolio-slider
   &__slide
@@ -38,62 +54,152 @@
       z-index: 10
 
   &__img
+    display: block
     height: 100%
     width: 100%
-    display: block
 
   &__relative
     position relative
 
   &__inner
     position absolute
-    padding-top: 40px
+    padding-top: 20px
     top: 0
     left: 0
     width: 100%
     height: 100%
     z-index: 15
 
+    +above($breakpoints.xl)
+      padding-top: 40px
+
   &__title
-    font-size: 40px
-    line-height: 45px
+    margin: 0 auto
+    font-size: 22px
+    line-height: 25px
     text-align: center
-    margin-bottom: 204px
-  
+    margin-bottom: 72px
+
+    +above($breakpoints.xl)
+      font-size: 40px
+      line-height: 45px
+      margin-bottom: 240px
+
+    +above($breakpoints.md)
+      margin-bottom: 204px
+
   &__slides
     .slick-arrow.slick-prev
-      bottom: 135px
-      right: 216px
-    
+      bottom: 82px
+      right: 70px
+
+      +above($breakpoints.sm)
+        bottom: 365px
+        right: 95px
+
+      +above($breakpoints.md)
+        bottom: 135px
+        right: 216px
+
     .slick-arrow.slick-next
-      right: 166px
-      bottom: 135px
+      bottom: 82px
+      right: 10px
+
+      +above($breakpoints.sm)
+        bottom: 365px
+        right: 15px 
+
+      +above($breakpoints.md)
+        right: 166px
+        bottom: 135px
+
+    .slick-dots
+      bottom: 0
+      right: 0
+      left: 0
+      position: absolute
+      display: flex
+      justify-content: center
+      counter-reset: num
+
+    .slick-dots li:first-child
+      border-left: 1px solid $color-light-brown
+      margin-left: 5px
+
+      +above($breakpoints.xs)
+        margin-left: 10px
+
+    .slick-dots li:last-child
+      border: none
+      margin-right: 5px
+
+      +above($breakpoints.sm)
+        margin-right: 10px
+
+    .slick-dots li
+      font-family: "Futura"
+      font-size: 16px
+      line-height: 18px
+      color: $color-light-brown
+      counter-increment: num
+      width: 40px
+      height: 43px
+      border-right: 1px solid $color-light-brown
+      padding-left: 5px
+      cursor: pointer
+      transition: all 0.3s
+
+      +above($breakpoints.xs)
+        font-weight: 600
+        font-size: 16px
+        line-height: 18px
+        width: 108px
+        height: 60px
+        padding-left: 9.5px
+
+      +above($breakpoints.md)
+        font-size: 18px
+        line-height: 22px
+        width: 151px
+        height: 60px
+
+    .slick-dots li:before
+      content: counter(num)
+      opacity: 0.5
+
+    .slick-dots li.slick-active:before
+      opacity: 1
+      font-weight: 500
+
+    .slick-dots li:nth-child(-n+9):before
+      content: "0" counter(num)
+
+    .slick-dots li.slick-active
+      font-family: "Futura"
+      border-left: 1px solid $color-white
+      font-size: 18px
+      line-height: 20px
+      color: $color-white
+      transform: translateX(-1px)
+
+      +above($breakpoints.sm)
+        font-size: 30px
+        line-height: 34px
+
+    .slick-dots li.slick-active button
+      font-size: 0
+
+    .slick-dots button
+      font-size: 0
 
 .portfolio-slider-projects
-  &__close
-    background-color: $color-white
-    display: flex
-    margin-right: 90px
-    position absolute
-    right: 0
-    width: 34px
-    height: 34px
-    cursor: pointer
-    border-radius: 100%
-    opacity: 0.8
-  
-  &__close-icon
-    fill: $color-dark-brown
-    position: absolute
-    width: 34px
-    height: 34px
-
   &__top
-    width: 100%
-    display: flex
-    justify-content: center
+    max-width: 1200px
+    top: 0
+    left: 0
+    right: 0
+    margin: auto
     position: absolute
-    align-items: center
     z-index 2
     
   &__title
@@ -107,6 +213,11 @@
     opacity: 0.9
 
     +above($breakpoints.sm)
+      padding: 22px 80px
+      font-size: 30px
+      line-height: 34px
+
+    +above($breakpoints.lg)
       padding: 45px 73px
       font-size: 40px
       line-height: 45px
@@ -115,11 +226,48 @@
     .slick-arrow.slick-next
       top: 0
       bottom: 0
-      right: 85px
+      right: 0
       margin: auto
+      margin-right: 20px
+
+      +above($breakpoints.md)
+        margin-right: 85px
 
     .slick-arrow.slick-prev
       top: 0
       bottom: 0
-      left: 85px
+      left:0
       margin: auto
+      margin-left: 20px
+
+      +above($breakpoints.md)
+        margin-left: 85px
+
+.portfolio-slider-projects__projects-item
+  position: relative
+
+.modal-close
+  background-color: $color-white
+  display: flex
+  position absolute
+  right: 0
+  left: 0
+  margin: 0 auto
+  width: 34px
+  height: 34px
+  cursor: pointer
+  border-radius: 100%
+  opacity: 0.8
+  bottom: 20px
+  z-index 23
+
+  +above($breakpoints.md)
+    top: 50px
+    right: 60px
+    left: auto
+
+  &__icon
+    fill: $color-dark-brown
+    position: absolute
+    width: 34px
+    height: 34px

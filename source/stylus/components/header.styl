@@ -6,8 +6,12 @@
     background-repeat:no-repeat
     background-position: center
     background-size: cover
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       background-image: url('/images/header-bg.png')
+
+  &__mobile-bg
+    position relative
 
   &__inner
     padding-top: 33px
@@ -15,13 +19,15 @@
     display: flex
     justify-content: space-between
     align-items: center
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       padding-top: 16px
       padding-bottom: 24px
 
   &__logo
     order: 2
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       order: 1
       display: flex
       justify-content: center
@@ -29,7 +35,8 @@
   
   &__logo-name
     display: none
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       font-family: "Proxima"
       padding-left: 10px
       text-transform: uppercase
@@ -41,23 +48,29 @@
   &__contact-img
     color: $color-primary
     font-size: 24px
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       display: none
 
   &__menu
     display: none
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       display: block
       order: 2
 
   &__mobile-menu
     order: 1
-    +above($breakpoints.sm)
+    display: flex
+    flex-direction: column
+
+    +above($breakpoints.xl)
       display: none
 
   &__menu-list
     display: none
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       display: flex
       justify-content: space-between
 
@@ -78,12 +91,11 @@
 
   &__contact-phone
     order: 3
-    +above($breakpoints.sm)
-      order: 3
 
 .phone-number
   display: none
-  +above($breakpoints.sm)
+
+  +above($breakpoints.xl)
     display: block
     color: $color-white
     letter-spacing: 0.1em
@@ -97,14 +109,16 @@
   flex-direction: column
   align-items: center
   padding-top: 65px
-  +above($breakpoints.sm)
+
+  +above($breakpoints.xl)
     padding-top: 136px
 
   &__slogan
     font-size: 18px
     line-height: 20px
     color: $color-white
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       font-weight: bold
       line-height: 22px
       margin-bottom: 32px
@@ -117,7 +131,8 @@
     color: $color-white
     font-family: $base-font-family
     margin-bottom: 20px
-    +above($breakpoints.sm)
+
+    +above($breakpoints.xl)
       max-width: 849px
       font-size: 52px
       line-height: 59px
@@ -128,6 +143,7 @@
     justify-content: center
     width: 200px
     margin-bottom: 186px
+
     +above($breakpoints.sm)
       margin-bottom: 256px
 
@@ -148,10 +164,36 @@
     width: 100%
     height: 2px
     background-color: $color-primary
+
     &:first-child
       top: 0
+
     &:last-child
       bottom: 0
+
+  &__mobile
+    max-width: 320px
+    padding: 40px 0px 40px 0px
+
+  &__mobile-list
+    color: $color-light-brown
+    letter-spacing: 0.1em
+    font-family: "Proxima"
+    font-size: 12px
+    line-height: 15px
+    text-transform: uppercase
+
+  &__mobile-list :last-child
+    margin-bottom: 40px
+
+  &__mobile-item
+    margin-bottom: 20px
+
+  &__mobile-phone
+    color: $color-white
+    font-size: 12px
+    line-height: 15px
+    letter-spacing: 0.1em
 
 .menu-burger.active .menu-burger__line
   &:first-child
@@ -165,18 +207,16 @@
 .menu-burger.active .menu-burger__line--hidden
   transform: scale(0)
 
-.menu__list.active
-  padding-left: 20px
-  display: inline-flex
-  flex-direction: column
-  justify-content: center
-  animation: btn-menu 0.8s 0s
-  animation-fill-mode: both
-  width: 150px
 
-@keyframes btn-menu
-  from
-    transform: translateX(100%)
+.open-menu
+  width: 100%
+  top: 0
+  right: 0
+  left: 0
+  height: 100%;
+  background: $color-dark-brown
+  position: absolute
+  padding: 42px 0 0 24px
 
-  to
-    transform: translateX(0%)
+  +above($breakpoints.sm)
+    display: none

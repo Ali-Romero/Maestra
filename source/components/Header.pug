@@ -1,29 +1,39 @@
 header.header
   .header__bg
-    .wrapper.wrapper--lg
-      .header__inner
-        .header__logo
-          a.header__logo-link(href="#" aria-label="logo")
-            img(src='/images/logo.svg' alt='img').logo-img
-            .header__logo-name Maestra
-        .header__mobile-menu
-          .menu-burger
-            span.menu-burger__line
-            span.menu-burger__line.menu-burger__line--hidden
-            span.menu-burger__line
-        nav.header__menu
-          ul.header__menu-list
-            li.header__menu-item
-              a.header__menu-link(href="#" aria-label="menu-link") Артобъекты
-            li.header__menu-item
-              a.header__menu-link(href="#" aria-label="menu-link") О проекте
-            li.header__menu-item
-              a.header__menu-link(href="#" aria-label="menu-link") Контакты
-        .header__contact-phone 
-          .phone-number +7 800 00 00 000
-          +icon(name="phone").header__contact-img
-      .sub-header
-        .sub-header__slogan Делаем то, что делать нельзя
-        h1.sub-header__title Интерьерные концепты премиум класса
-        .sub-header__btn
-            button.button.button--block Посмотреть
+    .header__mobile-bg
+      .wrapper.wrapper--lg
+        .header__inner
+          .header__logo
+            a.header__logo-link(href="#" aria-label="logo")
+              img(src='/images/logo.svg' alt='img').logo-img
+              .header__logo-name Maestra
+          .header__mobile-menu
+            .menu-burger
+              span.menu-burger__line
+              span.menu-burger__line.menu-burger__line--hidden
+              span.menu-burger__line
+            .menu-burger__mobile.d-none
+              ul.menu-burger__mobile-list
+                li.menu-burger__mobile-item
+                  a.menu-burger__mobile-link(href="#" aria-label="menu-link") Артобъекты
+                li.menu-burger__mobile-item
+                  a.menu-burger__mobile-link(href="#" aria-label="menu-link") О проекте
+                li.menu-burger__mobile-item
+                  a.menu-burger__mobile-link(href="#" aria-label="menu-link") Контакты
+              .menu-burger__mobile-phone +7 800 00 00 000
+          nav.header__menu
+            ul.header__menu-list
+              li.header__menu-item
+                a.header__menu-link(href="#" aria-label="menu-link") Артобъекты
+              li.header__menu-item
+                a.header__menu-link(href="#" aria-label="menu-link") О проекте
+              li.header__menu-item
+                a.header__menu-link(href="#" aria-label="menu-link") Контакты
+          .header__contact-phone 
+            .phone-number +7 800 00 00 000
+            +icon(name="phone").header__contact-img
+        .sub-header
+          .sub-header__slogan Делаем то, что делать нельзя
+          h1.sub-header__title Интерьерные концепты премиум класса
+          .sub-header__btn
+              button.button.button--block Посмотреть

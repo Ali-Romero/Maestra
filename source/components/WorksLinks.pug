@@ -31,4 +31,22 @@
           .masonry__subtitle
             .masonry__subtitle-text= links[i].subtitle
           .masonry__btn
-            .button.button--shadow Подробнее
+            .button.button--shadow(data-remodal-target=`modal-${index}`) Подробнее
+
+  .remodal.works-modal(
+    data-remodal-id=`modal-${index}`
+    data-remodal-options="hashTracking:false, modifier: modal-opacity, closeOnEscape:false,"
+  )
+    form.works-modal-form(method="post" action="")
+      .works-modal-form__title Вы нашли уникальную студию
+      .works-modal-form__subtitle Давайте обсудим Ваш проект
+      .works-modal-form__input-wrapper
+        input.works-modal-form__input.contact-form__input-name(name="name" type="text" placeholder="Ваше имя")
+      .works-modal-form__input-wrapper
+        input.works-modal-form__input.contact-form__input-phone(name="phone" type="text" placeholder="Ваш телефон")
+      .works-modal-form__btn
+        label.label
+          input.works-modal-form__input-dn(type="submit" value="Submit")
+          .button.button--block Жду звонка
+      .modal-close(data-remodal-action="close")
+        +icon(name="close").modal-close__icon
