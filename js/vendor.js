@@ -5971,7 +5971,7 @@ function manipulationTarget( elem, content ) {
 
 // Replace/restore the type attribute of script elements for safe DOM manipulation
 function disableScript( elem ) {
-	elem.type = ( elem.getAttribute( "type" ) !== null ) + "/test-gulp/" + elem.type;
+	elem.type = ( elem.getAttribute( "type" ) !== null ) + "/Maestra/" + elem.type;
 	return elem;
 }
 function restoreScript( elem ) {
@@ -9520,7 +9520,7 @@ jQuery.extend( {
 		// Handle falsy url in the settings object (#10093: consistency with old signature)
 		// We also use the url parameter if available
 		s.url = ( ( url || s.url || location.href ) + "" )
-			.replace( rprotocol, location.protocol + "/test-gulp//" );
+			.replace( rprotocol, location.protocol + "/Maestra//" );
 
 		// Alias method option to type as per ticket #12004
 		s.type = options.method || options.type || s.method || s.type;
@@ -9541,8 +9541,8 @@ jQuery.extend( {
 				// Support: IE <=8 - 11 only
 				// Anchor's host property isn't correctly set when s.url is relative
 				urlAnchor.href = urlAnchor.href;
-				s.crossDomain = originAnchor.protocol + "/test-gulp//" + originAnchor.host !==
-					urlAnchor.protocol + "/test-gulp//" + urlAnchor.host;
+				s.crossDomain = originAnchor.protocol + "/Maestra//" + originAnchor.host !==
+					urlAnchor.protocol + "/Maestra//" + urlAnchor.host;
 			} catch ( e ) {
 
 				// If there is an error parsing the URL, assume it is crossDomain,
@@ -11404,11 +11404,11 @@ return jQuery;
         _.$slider.addClass('slick-slider');
 
         _.$slideTrack = (_.slideCount === 0) ?
-            $('<div class="slick-track"/test-gulp/>').appendTo(_.$slider) :
-            _.$slides.wrapAll('<div class="slick-track"/test-gulp/>').parent();
+            $('<div class="slick-track"/Maestra/>').appendTo(_.$slider) :
+            _.$slides.wrapAll('<div class="slick-track"/Maestra/>').parent();
 
         _.$list = _.$slideTrack.wrap(
-            '<div class="slick-list"/test-gulp/>').parent();
+            '<div class="slick-list"/Maestra/>').parent();
         _.$slideTrack.css('opacity', 0);
 
         if (_.options.centerMode === true || _.options.swipeToSlide === true) {
