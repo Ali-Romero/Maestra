@@ -35,6 +35,7 @@ task('js', js)
 task('js:watch', jsWatch)
 task('svgSprite', svgSprite)
 task('svgSprite:watch', svgSpriteWatch)
+task('deploy', deploy)
 
 function dev() {
   return series(
