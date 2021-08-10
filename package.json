@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development gulp",
     "prod": "cross-env NODE_ENV=production gulp",
+    "deploy": "cross-env BASE_URL=/test-gulp/ gulp deploy",
     "serve": "serve ./dest -p 3000"
   },
   "devDependencies": {
