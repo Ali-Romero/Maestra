@@ -2,13 +2,13 @@
   font-family: "Proxima"
 
   &__bg
-    background-image: url('/images/header-bg-320.png')
+    background-image: url('../images/header-bg-320.png')
     background-repeat:no-repeat
     background-position: center
     background-size: cover
 
     +above($breakpoints.xl)
-      background-image: url('/images/header-bg.png')
+      background-image: url('../images/header-bg.png')
 
   &__mobile-bg
     position relative
@@ -88,6 +88,9 @@
     line-height: 15px
     text-transform: uppercase
     letter-spacing: 0.2em
+
+    &:hover
+      color: $color-light-brown
 
   &__contact-phone
     order: 3
