@@ -125,7 +125,7 @@ section.portfolio-slider
   .portfolio-slider__slides.js-portfolio-slider
     each item, index in items
       .portfolio-slider__slide
-        picture 
+        picture
           source(srcset="images/test-img/slider/320x480.png" type="image/png" media="(max-width:380px)")
           source(srcset="images/test-img/slider/768x980.png" type="image/png" media="(max-width:1024px)")
           img(src=item.img, alt=item.title width="1280" height="670").portfolio-slider__img
